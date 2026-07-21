@@ -448,12 +448,11 @@ box-shadow:0 0 20px #2b63ff;
 .layout{
 
     display:grid;
-
-    grid-template-columns:340px 1fr;
-
-    gap:80px;
-
+    grid-template-columns:520px 1fr;
+    gap:100px;
     align-items:start;
+
+}
 
 }
 
