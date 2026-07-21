@@ -122,3 +122,100 @@ showSlide(current);
 }
 
 });
+
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+
+const slider = document.querySelector(".slider");
+
+const next = document.querySelector(".next");
+const prev = document.querySelector(".prev");
+
+let current = 0;
+let autoSlide;
+
+function showSlide(index){
+
+    slides.forEach(slide => slide.classList.remove("active"));
+    dots.forEach(dot => dot.classList.remove("active"));
+
+    slides[index].classList.add("active");
+    dots[index].classList.add("active");
+
+}
+
+function nextSlide(){
+
+    current++;
+
+    if(current >= slides.length){
+
+        current = 0;
+
+    }
+
+    showSlide(current);
+
+}
+
+function prevSlide(){
+
+    current--;
+
+    if(current < 0){
+
+        current = slides.length - 1;
+
+    }
+
+    showSlide(current);
+
+}
+
+// 自動再生
+function startAutoSlide(){
+
+    autoSlide = setInterval(nextSlide, 5000);
+
+}
+
+// 停止
+function stopAutoSlide(){
+
+    clearInterval(autoSlide);
+
+}
+
+// 最初に開始
+startAutoSlide();
+
+// ホバー中は停止
+slider.addEventListener("mouseenter", stopAutoSlide);
+
+slider.addEventListener("mouseleave", startAutoSlide);
+
+// 矢印
+next.onclick = () =>{
+
+    nextSlide();
+
+}
+
+prev.onclick = () =>{
+
+    prevSlide();
+
+}
+
+// ドット
+dots.forEach((dot,index)=>{
+
+    dot.onclick = ()=>{
+
+        current = index;
+
+        showSlide(current);
+
+    }
+
+});
