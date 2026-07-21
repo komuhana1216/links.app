@@ -260,3 +260,110 @@ font-size:13px;
 color:#777;
 
 }
+
+#particles{
+    position:fixed;
+    inset:0;
+    z-index:-5;
+}
+
+.grid{
+
+position:fixed;
+inset:0;
+
+opacity:.08;
+
+background-image:
+linear-gradient(30deg,#2b63ff 12%,transparent 12.5%,transparent 87%,#2b63ff 87.5%,#2b63ff),
+linear-gradient(150deg,#2b63ff 12%,transparent 12.5%,transparent 87%,#2b63ff 87.5%,#2b63ff),
+linear-gradient(90deg,#2b63ff 2%,transparent 2.5%,transparent 97%,#2b63ff 97.5%);
+
+background-size:80px 140px;
+
+z-index:-4;
+
+}
+
+.stars span{
+
+position:absolute;
+
+width:2px;
+height:120px;
+
+background:
+linear-gradient(#fff,transparent);
+
+animation:meteor 8s linear infinite;
+
+opacity:.7;
+
+}
+
+.stars span:nth-child(1){
+
+left:10%;
+animation-delay:0s;
+
+}
+
+.stars span:nth-child(2){
+
+left:35%;
+animation-delay:2s;
+
+}
+
+.stars span:nth-child(3){
+
+left:55%;
+animation-delay:4s;
+
+}
+
+.stars span:nth-child(4){
+
+left:75%;
+animation-delay:1s;
+
+}
+
+.stars span:nth-child(5){
+
+left:90%;
+animation-delay:5s;
+
+}
+
+@keyframes meteor{
+
+0%{
+
+transform:
+translateY(-200px)
+translateX(0)
+rotate(35deg);
+
+opacity:0;
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateY(120vh)
+translateX(-220px)
+rotate(35deg);
+
+opacity:0;
+
+}
+
+}
