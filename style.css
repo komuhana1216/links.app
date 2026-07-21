@@ -559,3 +559,46 @@ transform:translateX(var(--right));
     flex-shrink:0;
 
 }
+
+/* ===========================
+   リンク画像ボタン
+=========================== */
+
+.banner{
+
+    display:block;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+    margin-bottom:20px;
+
+}
+
+.banner img{
+
+    width:100%;
+
+    display:block;
+
+    transition:.4s;
+
+}
+
+.banner:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 0 25px #2b63ff66;
+
+}
+
+.banner:hover img{
+
+    transform:scale(1.05);
+
+}
